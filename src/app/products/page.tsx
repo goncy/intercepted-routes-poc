@@ -6,7 +6,7 @@ export default function ProductsPage() {
       <h1>All products</h1>
       <ul>
         <li>
-          <Link href="/product/goncy">Goncy</Link>
+          <Link href="/product/triangle">Triangle</Link>
         </li>
       </ul>
     </div>
