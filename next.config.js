@@ -6,11 +6,12 @@ const nextConfig = {
   images: {
     domains: ["tailwindui.com"],
   },
-  async rewrites() {
+  async redirects() {
     return [
       {
         source: "/",
         destination: "/products",
+        permanent: true,
       },
     ];
   },
