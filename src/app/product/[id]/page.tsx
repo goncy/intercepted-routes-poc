@@ -1,11 +1,11 @@
-const USER = {
-  name: "goncy",
+const PRODUCT = {
+  name: "triangle",
 };
 
-export default function UserPage() {
+export default function ProductPage() {
   return (
     <div>
-      <h1>{USER.name}</h1>
+      <h1>{PRODUCT.name}</h1>
       <span>This is a normal route</span>
     </div>
   );
