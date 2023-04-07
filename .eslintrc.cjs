@@ -1,55 +1,61 @@
-const { resolve } = require('node:path');
+const {resolve} = require("node:path");
 
-const project = resolve(__dirname, 'tsconfig.json');
+const project = resolve(__dirname, "tsconfig.json");
 
 module.exports = {
   root: true,
-  "plugins": ["prettier", "import"],
+  plugins: ["prettier", "import"],
   extends: [
-    require.resolve('@vercel/style-guide/eslint/typescript'),
-    require.resolve('@vercel/style-guide/eslint/react'),
-    require.resolve('@vercel/style-guide/eslint/next'),
+    require.resolve("@vercel/style-guide/eslint/typescript"),
+    require.resolve("@vercel/style-guide/eslint/react"),
+    require.resolve("@vercel/style-guide/eslint/next"),
     "plugin:prettier/recommended",
   ],
   parserOptions: {
-    "ecmaVersion": "latest",
+    ecmaVersion: "latest",
     project,
   },
   settings: {
-    'import/resolver': {
+    "import/resolver": {
       typescript: {
         project,
       },
     },
   },
   rules: {
+    "@typescript-eslint/no-non-null-assertion": "off",
     "prettier/prettier": [
       "warn",
       {
-        "printWidth": 100,
-        "trailingComma": "all",
-        "tabWidth": 2,
-        "semi": true,
-        "singleQuote": false,
-        "bracketSpacing": false,
-        "arrowParens": "always",
-        "endOfLine":"auto"
-      }
+        printWidth: 100,
+        trailingComma: "all",
+        tabWidth: 2,
+        semi: true,
+        singleQuote: false,
+        bracketSpacing: false,
+        arrowParens: "always",
+        endOfLine: "auto",
+      },
     ],
-    "import/order": ["warn", {
-      "groups": ["type", "builtin", "object", "external", "internal", "parent", "sibling", "index"],
-      "pathGroups": [{
-        "pattern": "~/**",
-        "group": "external",
-        "position": "after"
-      }],
-      "newlines-between": "always"
-    }],
+    "import/order": [
+      "warn",
+      {
+        groups: ["type", "builtin", "object", "external", "internal", "parent", "sibling", "index"],
+        pathGroups: [
+          {
+            pattern: "~/**",
+            group: "external",
+            position: "after",
+          },
+        ],
+        "newlines-between": "always",
+      },
+    ],
     "padding-line-between-statements": [
       "warn",
-      {"blankLine": "always", "prev": "*", "next": ["return", "export"]},
-      {"blankLine": "always", "prev": ["const", "let", "var"], "next": "*"},
-      {"blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"]}
+      {blankLine: "always", prev: "*", next: ["return", "export"]},
+      {blankLine: "always", prev: ["const", "let", "var"], next: "*"},
+      {blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"]},
     ],
     "no-console": "warn",
     "react/prop-types": "off",
@@ -59,20 +65,20 @@ module.exports = {
     "react/jsx-sort-props": [
       "warn",
       {
-        "callbacksLast": true,
-        "shorthandFirst": true,
-        "noSortAlphabetically": false,
-        "reservedFirst": true
-      }
+        callbacksLast: true,
+        shorthandFirst: true,
+        noSortAlphabetically: false,
+        reservedFirst: true,
+      },
     ],
-    '@typescript-eslint/explicit-function-return-type': "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-unused-vars": [
       "warn",
       {
-        "args": "after-used",
-        "ignoreRestSiblings": false,
-        "argsIgnorePattern": "^_.*?$"
-      }
+        args: "after-used",
+        ignoreRestSiblings: false,
+        argsIgnorePattern: "^_.*?$",
+      },
     ],
-  }
+  },
 };
