@@ -8,11 +8,9 @@ export const metadata = {
 export default function RootLayout({
   children,
   modal,
-  sarasa,
 }: {
   children: React.ReactNode;
   modal: React.ReactNode;
-  sarasa: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -20,7 +18,6 @@ export default function RootLayout({
         <main>
           {children}
           {modal}
-          {sarasa}
         </main>
       </body>
     </html>
